@@ -37,6 +37,11 @@ frontend/node/
 frontend/src/main/angular/node_modules/
 frontend/src/main/angular/dist/
 frontend/src/main/angular/.angular/
+/frontend/src/main/angular/node/node.exe
+/frontend/src/main/angular/node/npm
+/frontend/src/main/angular/node/npm.cmd
+/frontend/src/main/angular/node/npx
+/frontend/src/main/angular/node/npx.cmd
 
 # OS
 .DS_Store
