@@ -71,6 +71,19 @@ mvn spring-boot:run
 - **Backend API**: [http://localhost:8080/api/hello](http://localhost:8080/api/hello)
 - **Health Check**: [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health)
 
+### 4. Uruchomienie w Dockerze
+
+```bash
+# Zbuduj obraz
+docker build -t reserva-app .
+
+# Uruchom kontener
+docker run -p 8080:8080 reserva-app
+
+# Alternatywnie z docker-compose
+docker compose up --build
+```
+
 ## 🔧 Development
 
 ### Backend (Spring Boot)
