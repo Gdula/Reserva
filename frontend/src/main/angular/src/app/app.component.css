@@ -1,0 +1,181 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hello-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.hello-section h2 {
+  font-size: 2.5rem;
+  margin: 0 0 30px 0;
+  color: #FFD700;
+}
+
+.versions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.version-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.version-card:hover {
+  transform: translateY(-5px);
+}
+
+.version-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.version-card p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.api-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.api-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.8rem;
+}
+
+button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.response {
+  margin-top: 20px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.response h4 {
+  margin: 0 0 10px 0;
+  color: #90EE90;
+}
+
+.response pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.error {
+  margin-top: 20px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.error h4 {
+  margin: 0 0 10px 0;
+  color: #FFB6C1;
+}
+
+.error p {
+  margin: 10px 0;
+}
+
+.error small {
+  opacity: 0.7;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .hello-section h2 {
+    font-size: 2rem;
+  }
+
+  .versions {
+    grid-template-columns: 1fr;
+  }
+}
