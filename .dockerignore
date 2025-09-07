@@ -1,0 +1,9 @@
+.git
+.gitignore
+**/target
+**/node
+**/node_modules
+**/dist
+frontend/src/main/angular/node
+frontend/src/main/angular/node_modules
+frontend/src/main/angular/dist
