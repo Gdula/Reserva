@@ -47,8 +47,8 @@ interface StepCard {
           <a href="#">Pomoc</a>
         </nav>
         <div class="cta-group">
-          <button class="ghost">Zaloguj się</button>
-          <button class="primary">Zostań wykonawcą</button>
+          <button class="cta cta--ghost">Zaloguj się</button>
+          <button class="cta cta--primary">Zostań wykonawcą</button>
         </div>
       </header>
 
