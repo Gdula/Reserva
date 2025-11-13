@@ -112,7 +112,11 @@ interface StepCard {
           <div class="card-grid">
             <article class="service-card" *ngFor="let service of popularServices">
               <div class="card-image">
-                <img [src]="service.image" [alt]="service.title" />
+                <img
+                  [src]="service.image"
+                  [alt]="service.title"
+                  (error)="handleImageError($event, serviceImageFallback)"
+                />
                 <span class="badge" *ngIf="service.badge">{{ service.badge }}</span>
               </div>
               <div class="card-content">
@@ -142,7 +146,11 @@ interface StepCard {
           <div class="card-grid">
             <article class="service-card" *ngFor="let service of weekendServices">
               <div class="card-image">
-                <img [src]="service.image" [alt]="service.title" />
+                <img
+                  [src]="service.image"
+                  [alt]="service.title"
+                  (error)="handleImageError($event, serviceImageFallback)"
+                />
                 <span class="badge" *ngIf="service.badge">{{ service.badge }}</span>
               </div>
               <div class="card-content">
@@ -171,7 +179,11 @@ interface StepCard {
           </div>
           <div class="experts-grid">
             <article class="expert-card" *ngFor="let expert of featuredExperts">
-              <img [src]="expert.image" [alt]="expert.name" />
+              <img
+                [src]="expert.image"
+                [alt]="expert.name"
+                (error)="handleImageError($event, expertImageFallback)"
+              />
               <div class="expert-content">
                 <div class="expert-header">
                   <h3>{{ expert.name }}</h3>
@@ -233,7 +245,8 @@ export class AppComponent {
       reviews: 182,
       availability: 'Najbliższy termin: jutro, 08:00',
       tags: ['Środki eco', 'Własny sprzęt', 'Faktura VAT'],
-      image: 'assets/services/cleaning.svg',
+      image:
+        'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
       badge: 'Najczęściej wybierane'
     },
     {
@@ -244,7 +257,8 @@ export class AppComponent {
       reviews: 96,
       availability: 'Dostępne dzisiaj od 16:30',
       tags: ['Diagnoza w cenie', 'Gwarancja 12 m-cy'],
-      image: 'assets/services/appliance.svg'
+      image:
+        'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Montaż lamp i oświetlenia',
@@ -254,7 +268,8 @@ export class AppComponent {
       reviews: 74,
       availability: 'Termin ekspresowy: dziś 19:00',
       tags: ['Certyfikowany elektryk', 'Drobne naprawy gratis'],
-      image: 'assets/services/lighting.svg'
+      image:
+        'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Mycie okien w biurach',
@@ -264,7 +279,8 @@ export class AppComponent {
       reviews: 68,
       availability: 'Rezerwacje na ten tydzień',
       tags: ['Ubezpieczenie OC', 'Praca po godzinach'],
-      image: 'assets/services/windows.svg'
+      image:
+        'https://images.unsplash.com/photo-1489171078254-c3365d6e359f?auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -277,7 +293,8 @@ export class AppComponent {
       reviews: 54,
       availability: 'Termin weekendowy dostępny',
       tags: ['Bezpłatna wycena', 'Farby w cenie'],
-      image: 'assets/services/painting.svg',
+      image:
+        'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
       badge: 'Nowość'
     },
     {
@@ -288,7 +305,8 @@ export class AppComponent {
       reviews: 88,
       availability: 'Zostały 2 wolne terminy',
       tags: ['Dojazd gratis', 'Pranie parowe'],
-      image: 'assets/services/upholstery.svg'
+      image:
+        'https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Całodobowy hydraulik',
@@ -298,7 +316,8 @@ export class AppComponent {
       reviews: 143,
       availability: 'Reakcja w 45 minut',
       tags: ['24/7', 'Brak dodatkowych opłat'],
-      image: 'assets/services/plumber.svg'
+      image:
+        'https://images.unsplash.com/photo-1488982489640-3bbf9b9e551c?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Ogrodnik na sobotę',
@@ -308,7 +327,8 @@ export class AppComponent {
       reviews: 41,
       availability: 'Najbliższa sobota 09:00',
       tags: ['Projekt rabaty', 'Pielęgnacja trawnika'],
-      image: 'assets/services/gardening.svg'
+      image:
+        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -319,7 +339,8 @@ export class AppComponent {
       city: 'Warszawa',
       rating: 4.97,
       jobs: 312,
-      image: 'assets/experts/expert-anna.svg',
+      image:
+        'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=640&q=80',
       badges: ['Superwykonawca', '5 lat doświadczenia']
     },
     {
@@ -328,7 +349,8 @@ export class AppComponent {
       city: 'Kraków',
       rating: 4.92,
       jobs: 198,
-      image: 'assets/experts/expert-piotr.svg',
+      image:
+        'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=640&q=80',
       badges: ['Polecany przez klientów', 'Dojazd w cenie']
     },
     {
@@ -337,10 +359,16 @@ export class AppComponent {
       city: 'Gdańsk',
       rating: 5.0,
       jobs: 87,
-      image: 'assets/experts/expert-natalia.svg',
+      image:
+        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80',
       badges: ['Indywidualne projekty', 'Rozliczenie etapami']
     }
   ];
+
+  readonly serviceImageFallback =
+    'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=70';
+  readonly expertImageFallback =
+    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=640&q=80';
 
   readonly howItWorks: StepCard[] = [
     {
@@ -359,4 +387,11 @@ export class AppComponent {
       description: 'Wybierz dogodny termin, potwierdź szczegóły i zapłać bezpiecznie.'
     }
   ];
+
+  handleImageError(event: Event, fallback: string) {
+    const target = event.target as HTMLImageElement | null;
+    if (target && target.src !== fallback) {
+      target.src = fallback;
+    }
+  }
 }
