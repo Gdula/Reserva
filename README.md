@@ -100,6 +100,23 @@ npm start
 # Dostęp: http://localhost:4200
 ```
 
+### Live reload (backend + frontend jednocześnie)
+1. **Backend** – w pierwszym terminalu uruchom Spring Boot z włączonym DevTools (auto restart po zmianach):
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+2. **Frontend** – w drugim terminalu odpal Angulara w trybie dev z proxy i live reloadem:
+   ```bash
+   cd frontend/src/main/angular
+   npm install        # tylko za pierwszym razem
+   npm start          # ng serve + proxy -> backend na :8080
+   ```
+3. **Podgląd zmian** – wchodzisz na [http://localhost:4200](http://localhost:4200).
+   - Zmiany w plikach Angulara pojawiają się natychmiast dzięki `ng serve` (hot reload).
+   - Wywołania pod `/api` oraz `/actuator` trafiają automatycznie na backend (proxy z `proxy.conf.json`).
+   - Zmiany w Javie przeładowują się po zapisaniu dzięki Spring Boot DevTools.
+
 ## 🏗 Build na produkcję
 
 ```bash
