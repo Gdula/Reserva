@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.category-scroll {
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-scroll > * {
+  scroll-snap-align: start;
+}

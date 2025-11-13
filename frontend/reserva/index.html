@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl" x-data>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-sm">
+      <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <span class="text-2xl font-semibold tracking-tight">Reserva</span>
+        <div class="flex items-center space-x-4 text-sm font-medium">
+          <a href="#uslugi" class="hidden sm:inline-flex hover:text-sky-600 transition-colors">Usługi</a>
+          <a href="#zaloguj" class="hidden sm:inline-flex hover:text-sky-600 transition-colors">Zaloguj</a>
+          <a href="#host" class="inline-flex items-center px-4 py-2 rounded-full border border-slate-200 hover:border-slate-300 hover:bg-slate-100 transition-colors">Zostań gospodarzem</a>
+          <button type="button" class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 hover:border-slate-300 hover:bg-slate-100 transition-colors" aria-label="Przełącz motyw">
+            <span aria-hidden="true">🌙</span>
+            <span class="hidden sm:inline" aria-hidden="true">/</span>
+            <span aria-hidden="true">☀️</span>
+          </button>
+        </div>
+      </nav>
+      <div class="sticky top-0 z-30 bg-white/80 backdrop-blur border-t border-slate-100">
+        <div class="container mx-auto px-4">
+          <div class="-translate-y-8">
+            <form class="mx-auto max-w-4xl bg-white rounded-2xl shadow-xl border border-slate-100 p-2 flex items-center divide-x divide-slate-100">
+              <label class="flex-1 px-4 py-2">
+                <span class="block text-xs uppercase tracking-wide text-slate-500">Gdzie</span>
+                <input type="text" placeholder="Dowolna lokalizacja" class="w-full border-0 focus:ring-0 text-sm text-slate-900 placeholder:text-slate-400" />
+              </label>
+              <label class="flex-1 px-4 py-2">
+                <span class="block text-xs uppercase tracking-wide text-slate-500">Kiedy</span>
+                <input type="text" placeholder="Dodaj daty" readonly class="w-full border-0 focus:ring-0 text-sm text-slate-900 placeholder:text-slate-400 cursor-pointer" />
+              </label>
+              <label class="flex-1 px-4 py-2">
+                <span class="block text-xs uppercase tracking-wide text-slate-500">Kto</span>
+                <input type="number" min="1" value="1" class="w-full border-0 focus:ring-0 text-sm text-slate-900 placeholder:text-slate-400" />
+              </label>
+              <button type="submit" class="ml-2 inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 text-white hover:bg-slate-700 transition-colors">
+                <i data-lucide="search" class="w-5 h-5"></i>
+                <span class="sr-only">Szukaj</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 container mx-auto px-4 space-y-12 pb-16">
+      <section aria-labelledby="kategorie" class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 id="kategorie" class="text-lg font-semibold">Kategorie</h2>
+        </div>
+        <div class="category-scroll flex space-x-3 overflow-x-auto pb-2">
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Joga</button>
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Warsztaty</button>
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Fryzjer</button>
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Kosmetyczka</button>
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Masaż</button>
+          <button class="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-200 bg-white shadow-sm text-sm font-medium hover:border-slate-300 transition-colors">Fizjo</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="oferty" class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 id="oferty" class="text-lg font-semibold">Oferty</h2>
+        </div>
+        <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-100 bg-white">
+      <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600 gap-4">
+        <span>&copy; <span id="year"></span> Reserva. Wszelkie prawa zastrzeżone.</span>
+        <div class="flex items-center space-x-6">
+          <a href="#regulamin" class="hover:text-sky-600 transition-colors">Regulamin</a>
+          <a href="#polityka" class="hover:text-sky-600 transition-colors">Polityka prywatności</a>
+          <a href="#kontakt" class="hover:text-sky-600 transition-colors">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.lucide && window.lucide.createIcons();
+      const year = document.getElementById('year');
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>
