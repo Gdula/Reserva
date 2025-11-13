@@ -233,7 +233,7 @@ export class AppComponent {
       reviews: 182,
       availability: 'Najbliższy termin: jutro, 08:00',
       tags: ['Środki eco', 'Własny sprzęt', 'Faktura VAT'],
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/services/cleaning.svg',
       badge: 'Najczęściej wybierane'
     },
     {
@@ -244,7 +244,7 @@ export class AppComponent {
       reviews: 96,
       availability: 'Dostępne dzisiaj od 16:30',
       tags: ['Diagnoza w cenie', 'Gwarancja 12 m-cy'],
-      image: 'https://images.unsplash.com/photo-1581578017423-5c267d360284?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/appliance.svg'
     },
     {
       title: 'Montaż lamp i oświetlenia',
@@ -254,7 +254,7 @@ export class AppComponent {
       reviews: 74,
       availability: 'Termin ekspresowy: dziś 19:00',
       tags: ['Certyfikowany elektryk', 'Drobne naprawy gratis'],
-      image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/lighting.svg'
     },
     {
       title: 'Mycie okien w biurach',
@@ -264,7 +264,7 @@ export class AppComponent {
       reviews: 68,
       availability: 'Rezerwacje na ten tydzień',
       tags: ['Ubezpieczenie OC', 'Praca po godzinach'],
-      image: 'https://images.unsplash.com/photo-1465800872432-a9860a66c727?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/windows.svg'
     }
   ];
 
@@ -277,7 +277,7 @@ export class AppComponent {
       reviews: 54,
       availability: 'Termin weekendowy dostępny',
       tags: ['Bezpłatna wycena', 'Farby w cenie'],
-      image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/services/painting.svg',
       badge: 'Nowość'
     },
     {
@@ -288,7 +288,7 @@ export class AppComponent {
       reviews: 88,
       availability: 'Zostały 2 wolne terminy',
       tags: ['Dojazd gratis', 'Pranie parowe'],
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/upholstery.svg'
     },
     {
       title: 'Całodobowy hydraulik',
@@ -298,7 +298,7 @@ export class AppComponent {
       reviews: 143,
       availability: 'Reakcja w 45 minut',
       tags: ['24/7', 'Brak dodatkowych opłat'],
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/plumber.svg'
     },
     {
       title: 'Ogrodnik na sobotę',
@@ -308,7 +308,7 @@ export class AppComponent {
       reviews: 41,
       availability: 'Najbliższa sobota 09:00',
       tags: ['Projekt rabaty', 'Pielęgnacja trawnika'],
-      image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80'
+      image: 'assets/services/gardening.svg'
     }
   ];
 
@@ -319,7 +319,7 @@ export class AppComponent {
       city: 'Warszawa',
       rating: 4.97,
       jobs: 312,
-      image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80',
+      image: 'assets/experts/expert-anna.svg',
       badges: ['Superwykonawca', '5 lat doświadczenia']
     },
     {
@@ -328,7 +328,7 @@ export class AppComponent {
       city: 'Kraków',
       rating: 4.92,
       jobs: 198,
-      image: 'https://images.unsplash.com/photo-1544723795-3fb0f31216d7?auto=format&fit=crop&w=400&q=80',
+      image: 'assets/experts/expert-piotr.svg',
       badges: ['Polecany przez klientów', 'Dojazd w cenie']
     },
     {
@@ -337,7 +337,7 @@ export class AppComponent {
       city: 'Gdańsk',
       rating: 5.0,
       jobs: 87,
-      image: 'https://images.unsplash.com/photo-1544723795-3fb44aefb0b3?auto=format&fit=crop&w=400&q=80',
+      image: 'assets/experts/expert-natalia.svg',
       badges: ['Indywidualne projekty', 'Rozliczenie etapami']
     }
   ];

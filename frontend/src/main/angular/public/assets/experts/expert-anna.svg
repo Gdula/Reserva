@@ -1,0 +1,12 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-anna" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb199" />
+      <stop offset="100%" stop-color="#ff0844" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="160" fill="url(#grad-anna)" />
+  <circle cx="160" cy="140" r="70" fill="rgba(255,255,255,0.65)" />
+  <path d="M60 300c18-60 64-90 100-90s82 30 100 90" fill="rgba(255,255,255,0.65)" />
+  <text x="160" y="175" font-size="72" font-family="'Segoe UI', 'Inter', sans-serif" fill="#ff4f81" text-anchor="middle">A</text>
+</svg>

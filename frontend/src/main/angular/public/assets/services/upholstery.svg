@@ -1,0 +1,16 @@
+<svg width="640" height="480" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-upholstery" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c7ffd8" />
+      <stop offset="100%" stop-color="#5ec576" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="32" fill="url(#grad-upholstery)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="150" y="210" width="340" height="140" rx="50" fill="rgba(255,255,255,0.2)" />
+    <path d="M200 210v-60c0-33 27-60 60-60h120c33 0 60 27 60 60v60" />
+    <path d="M200 210l-40 60" />
+    <path d="M440 210l40 60" />
+    <path d="M260 280h120" />
+  </g>
+</svg>
